@@ -2,69 +2,67 @@
 
 PhoneBook::PhoneBook()
 {
-    cout << "PB Constructor Called" << endl;
-    this->position = 0;
-    this->size = 0;
+	this->_position = 0;
+	this->_size = 0;
 
-    return ;
+	return ;
 }
 
 PhoneBook::~PhoneBook()
 {
-    cout << "PB Destructor Called" << endl;
-    
-    return ;
+	return ;
 }
 
-void PhoneBook::addContact(Contact Contact)
+void	PhoneBook::addContact(Contact Contact)
 {
-    if (this->position == 8)
-        this->position = 0;
-    
-    if (this->size != 8)
-        this->size++;
-    
-    Contact.id = this->position;
-    this->Book[this->position] = Contact;
-    this->position++;
+	if (this->_position == 8)
+		this->_position = 0;
+	
+	if (this->_size != 8)
+		this->_size++;
+	
+	Contact.id = this->_position;
+	this->_Book[this->_position] = Contact;
+	this->_position++;
 
-    return ;
+	return ;
 }
 
-void PhoneBook::printBook(void)
+void	PhoneBook::printBook(void)
 {
-    int i;
+	int i;
 
-    i = -1;
-    cout << " __________ __________ __________ __________ " << endl;
-    cout << "|Id        |First Name|Last Name |Phone Num.|" << endl;
-    while (++i < this->size)
-    {
+	i = -1;
+	cout << " ---------- ---------- ---------- ---------- " << endl;
+	cout << "|Id        |First Name|Last Name |Phone Num.|" << endl;
+	cout << " ---------- ---------- ---------- ---------- " << endl;
+	while (++i < this->_size)
+	{
 
-        cout << "|----------|----------|----------|----------|" << endl;
-        cout << "|" << this->Book[i].id << "         |";
-        put_substr(this->Book[i].firstName);
-        cout << "|";
-        put_substr(this->Book[i].lastName);
-        cout << "|";
-        put_substr(this->Book[i].phoneNumber);
-        cout << "|";
-        cout << endl << "|----------|----------|----------|----------|" << endl;
-    }
-    cout << endl;
-    cout << endl;
+		cout << " ---------- ---------- ---------- ---------- " << endl;
+		cout << "|" << this->_Book[i].id << "         |";
+		put_substr(this->_Book[i].firstName);
+		cout << "|";
+		put_substr(this->_Book[i].lastName);
+		cout << "|";
+		put_substr(this->_Book[i].phoneNumber);
+		cout << "|";
+		cout << endl << " ---------- ---------- ---------- ---------- " << endl;
+	}
+	cout << endl;
+	cout << endl;
 }
 
 void    PhoneBook::printContact(int id)
 {
-    printf("size = %d\n", this->size);
-    if (id - 1 > this->size)
-    {
-        cerr << id << " not find" << endl;
-        return ;
-    }
-    cout << "First Name: " << this->Book[id].firstName << endl;
-    cout << "Last Name: " << this->Book[id].lastName << endl;
-    cout << "Phone Number: " << this->Book[id].phoneNumber << endl;
-    cout << "Darkest Secret: " << this->Book[id].darkestSecret << endl << endl;
+	if (id > this->_size - 1)
+	{
+		cerr << id << " not found" << endl;
+		return ;
+	}
+	cout << endl;
+	cout << "First Name: " << this->_Book[id].firstName << endl;
+	cout << "Last Name: " << this->_Book[id].lastName << endl;
+	cout << "Phone Number: " << this->_Book[id].phoneNumber << endl;
+	cout << "Darkest Secret: " << this->_Book[id].darkestSecret << endl << endl;
 }

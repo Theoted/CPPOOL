@@ -6,23 +6,25 @@
 # include "Contact.hpp"
 # include "main.hpp"
 
-using namespace std;
-
 class PhoneBook
 {
 
 public:
 
-    Contact Book[8];
-    int     position;
-    int     size;
 
-    PhoneBook(void);
-    ~PhoneBook(void);
+	PhoneBook(void);
+	~PhoneBook(void);
 
-    void    addContact(Contact Contact);
-    void    printBook(void);
-    void    printContact(int id);
+	void	addContact(Contact Contact);
+	void	printBook(void);
+	void	printContact(int id);
+
+private:
+
+	Contact	_Book[8];
+	int		_position;
+	int		_size;
+
 };
 
 #endif

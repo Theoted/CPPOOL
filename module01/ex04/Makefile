@@ -1,5 +1,6 @@
-NAME	=	bonjourIciLeCerveau
+NAME	=	sed
 SRCS	=	main.cpp 
+# HEADERS	=	HumanA.hpp HumanB.hpp Weapon.hpp
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJS	=	$(SRCS:.cpp=.o)

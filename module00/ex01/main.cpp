@@ -58,7 +58,7 @@ static void add_contact(PhoneBook *PhoneBook)
 
 	i = -1;
 	cout << endl;
-	while (++i < 4)
+	while (++i < 4  && !cin.eof())
 	{
 		cout << options[i] << ": ";
 		getline(cin, userParams[i]);
@@ -86,7 +86,7 @@ int main(void)
 	PhoneBook   PhoneBook;
 	string      str;
 
-	while (str.compare("EXIT"))
+	while (str.compare("EXIT") && !cin.eof())
 	{
 		phone_book_menu();
 		getline(cin, str);

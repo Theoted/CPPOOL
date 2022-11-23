@@ -1,8 +1,10 @@
-NAME	=	sed
-SRCS	=	main.cpp 
+NAME	=	Harl
+SRCS	=	main.cpp Harl.cpp 
+HEADERS	=	Harl.hpp
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-std=c++98
 
+# -Wall -Wextra -Werror
 OBJS	=	$(SRCS:.cpp=.o)
 
 %.o:		%.cpp

@@ -38,6 +38,8 @@ static void	search_contact(PhoneBook *PhoneBook)
 	getline(cin, id);
 	while (check_id(id) == -1)
 	{
+		if (cin.eof())
+			return ;
 		cerr << "Please enter valid Id: ";
 		getline(cin, id);
 	}
@@ -62,8 +64,9 @@ static void add_contact(PhoneBook *PhoneBook)
 	{
 		cout << options[i] << ": ";
 		getline(cin, userParams[i]);
-		while ((userParams[i].find_first_not_of(32) == string::npos)
+		while (((userParams[i].find_first_not_of(32) == string::npos)
 			|| (userParams[i].find_first_not_of(9) == string::npos))
+			&& !cin.eof())
 		{
 			cerr << "The field cannot be empty" << endl << endl;
 			cout << options[i] << ": ";

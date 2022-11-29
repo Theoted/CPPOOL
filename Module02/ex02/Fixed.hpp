@@ -6,7 +6,7 @@
 /*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:37:26 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/29 11:12:48 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/11/29 13:27:10 by theodeville      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,35 @@ public:
     Fixed(const float n);
     ~Fixed(void);
     
-    Fixed &operator=(const Fixed &Fixed);
+    Fixed   &operator=(const Fixed &Fixed);
+
+    // Comparaison operators 
+    bool    operator<(const Fixed &F2);
+    bool    operator>(const Fixed &F2);
+    bool    operator<=(const Fixed &F2);
+    bool    operator>=(const Fixed &F2);
+    bool    operator==(const Fixed &F2);
+    bool    operator!=(const Fixed &F2);
+
+    // Arithmetic operators
+    Fixed   operator+(const Fixed &F2);
+    Fixed   operator-(const Fixed &F2);
+    Fixed   operator*(const Fixed &F2);
+    Fixed   operator/(const Fixed &F2);
+    
+    // Arithmetic operators
+        // Prefix
+    Fixed   &operator++(void);
+    Fixed   &operator--(void);
+        // Postfix
+    Fixed   operator++(int n);
+    Fixed   operator--(int n);
+
+    static const Fixed   &min(Fixed &F1, Fixed &F2);
+    static const Fixed   &min(const Fixed &F1, const Fixed &F2);
+
+    static const Fixed   &max(Fixed &F1, Fixed &F2);
+    static const Fixed   &max(const Fixed &F1, const Fixed &F2);
 
     float   toFloat(void) const;
     int     toInt(void) const;

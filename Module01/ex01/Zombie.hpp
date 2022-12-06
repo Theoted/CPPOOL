@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:37:41 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/02 16:04:13 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 10:43:29 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,27 @@
 # include <string>
 # include <iostream>
 
-using std::cout;
-using std::cin;
-using std::cerr;
-using std::endl;
-using std::string;
-
 class Zombie
 {
     
 public:
 
-    Zombie( void );
-    Zombie( string name );
-    ~Zombie( void );
+    Zombie(void);
+    Zombie(std::string name);
+    ~Zombie(void);
 
-    void    announce( void ) const;
+    void    announce(void) const;
     
-    string  getName( void ) const;
-    void    setName( string name );
+    std::string     getName(void) const;
+    void            setName(std::string name);
 
 
 private:
     
-    string _name;
+    std::string _name;
 
 };
 
-Zombie  *zombieHorde( int N, string name );
+Zombie  *zombieHorde(int N, std::string name);
 
 #endif

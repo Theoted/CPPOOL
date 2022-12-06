@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:08:50 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/07 13:45:57 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 10:55:09 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Harl
 
 public:
     
-    Harl( void );
-    ~Harl( void );
+    Harl(void);
+    ~Harl(void);
 
-    void    complain( std::string level );
+    void    complain(std::string level);
     
 private:
 
@@ -36,10 +36,10 @@ private:
             
     } t_complaints;
     
-    void            debug( void );
-    void            info( void );
-    void            warning( void );
-    void            error( void );
+    void            debug(void);
+    void            info(void);
+    void            warning(void);
+    void            error(void);
 
     t_complaints    complaints[4];
     

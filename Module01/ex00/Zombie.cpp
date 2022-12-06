@@ -6,30 +6,28 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:36:13 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/02 14:17:59 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 10:35:37 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( string name ) : _name( name )
+Zombie::Zombie(std::string name) : _name(name)
 {
-    cout << this->getName() << " born" << endl;
-    return ;
+    std::cout << this->getName() << " born" << std::endl;
 }
 
-Zombie::~Zombie( void )
+Zombie::~Zombie(void)
 {
-    cout << this->getName() << " delete" << endl;
-    return ;
+    std::cout << this->getName() << " delete" << std::endl;
 }
 
-string  Zombie::getName( void ) const
+const std::string  &Zombie::getName(void) const
 {
-    return ( this->_name );
+    return (this->_name);
 }
 
-void    Zombie::announce( void ) const
+void    Zombie::announce(void) const
 {
-    cout << getName() << ": BraiiiiiiinnnzzzZ..." << endl;
+    std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

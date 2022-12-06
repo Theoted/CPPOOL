@@ -1,6 +1,6 @@
 NAME	=	bonjourIciLeCerveau
 SRCS	=	main.cpp 
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJS	=	$(SRCS:.cpp=.o)
 

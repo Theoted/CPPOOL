@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   clapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:54:39 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/30 11:59:43 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 11:08:41 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "clapTrap.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
 {

@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:36:13 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/02 16:05:23 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 10:44:49 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ Zombie::Zombie( void )
     return ;
 }
 
-Zombie::Zombie( string name ) : _name( name )
+Zombie::Zombie(std::string name) : _name(name)
 {
-    cout << this->getName() << " born" << endl;
+    std::cout << this->getName() << " born" << std::endl;
     return ;
 }
 
-Zombie::~Zombie( void )
+Zombie::~Zombie(void)
 {
-    cout << this->getName() << " delete" << endl;
+    std::cout << this->getName() << " delete" << std::endl;
     return ;
 }
 
-string  Zombie::getName( void ) const
+std::string  Zombie::getName(void) const
 {
     return ( this->_name );
 }
 
-void    Zombie::announce( void ) const
+void    Zombie::announce(void) const
 {
-    cout << getName() << ": BraiiiiiiinnnzzzZ..." << endl;
+    std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void    Zombie::setName( string name )
+void    Zombie::setName(std::string name)
 {
     this->_name = name;
 }

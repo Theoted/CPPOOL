@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:12:36 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/04 13:43:34 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 10:49:17 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Weapon
 
 public:
     
-    Weapon( void );
-    Weapon( const std::string type );
-    ~Weapon( void );
+    Weapon(void);
+    Weapon(const std::string &type);
+    ~Weapon(void);
 
-    const std::string & getType( void ) const;
-    void                setType( const std::string type);
+    const std::string   &getType(void) const;
+    void                setType(const std::string &type);
 
 private:
 

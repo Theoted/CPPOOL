@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:37:28 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/07 13:32:40 by tdeville         ###   ########lyon.fr   */
+/*   Created: 2022/12/06 11:18:23 by tdeville          #+#    #+#             */
+/*   Updated: 2022/12/07 11:26:25 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Bureaucrat.hpp"
 
-int main(void)
+int main()
 {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max(a, b) << std::endl;
-    return 0;
+    Bureaucrat  A("Gilles");
+    Bureaucrat  B;
+    Bureaucrat  C("Chris", 2);
+    try
+    {
+        Bureaucrat I("Gilles", 45);
+        A = I;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << A << std::endl;
+    std::cout << B << std::endl;
+    return (0);
 }

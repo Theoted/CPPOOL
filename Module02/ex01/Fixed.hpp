@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:37:26 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/29 11:12:48 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 16:28:44 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

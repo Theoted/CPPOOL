@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:30:16 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/06 10:43:46 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/09 11:04:14 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 Zombie  *zombieHorde(int N, std::string name)
 {
+    if (N < 0)
+    {
+        std::cerr << "Negative hord nb" << std::endl;
+        return (nullptr);
+    }
+    
     int i;
 
     i = -1;
     Zombie* z = new Zombie[N];
     
-    if (N < 0)
-        std::cout << "Negative hord nb" << std::endl;
 
     while (++i < N)
         z[i].setName( name );

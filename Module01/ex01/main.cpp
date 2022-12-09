@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:50:51 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/02 16:08:12 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/09 11:05:04 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int main( void )
     while(++i < N)
         z[i].announce();
     
-    delete [] z;
+    if (z)
+        delete [] z;
     
     return (0);
 }

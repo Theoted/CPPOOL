@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:08:48 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/06 10:55:33 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/08 13:58:05 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void    Harl::complain(std::string level)
     i = 0;
     while (i < 4)
     {
-        if (!strcmp(level.c_str(), this->complaints[i].msg.c_str()))
+        if (level == this->complaints[i].msg)
             return (this->*(complaints[i].action))();
         i++;
     }

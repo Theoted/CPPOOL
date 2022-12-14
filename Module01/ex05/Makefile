@@ -1,10 +1,9 @@
 NAME	=	Harl
 SRCS	=	main.cpp Harl.cpp 
 HEADERS	=	Harl.hpp
-CC		=	clang++
-CFLAGS	=	-std=c++98
+CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# -Wall -Wextra -Werror
 OBJS	=	$(SRCS:.cpp=.o)
 
 %.o:		%.cpp

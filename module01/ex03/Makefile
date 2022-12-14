@@ -1,7 +1,7 @@
 NAME	=	war
 SRCS	=	HumanA.cpp HumanB.cpp Weapon.cpp main.cpp 
 HEADERS	=	HumanA.hpp HumanB.hpp Weapon.hpp
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJS	=	$(SRCS:.cpp=.o)
 

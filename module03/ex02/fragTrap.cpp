@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:55:50 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/30 12:43:52 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 11:09:49 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fragTrap.hpp"
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap(void)
 {

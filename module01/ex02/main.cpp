@@ -3,35 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:57:25 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/03 20:06:25 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 10:46:53 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-using std::string;
-using std::cout;
-using std::endl;
-
-int main( void )
+int main(void)
 {
-    string  str = "HI THIS IS BRAIN";
-    string* stringPTR = &str; 
-    string& stringREF = str;
+    std::string  str = "HI THIS IS BRAIN";
+    std::string* stringPTR = &str; 
+    std::string& stringREF = str;
 
-    cout << &str << endl;
-    cout << stringPTR << endl;
-    cout << &stringREF << endl;
+    std::cout << &str << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << str << endl;
-    cout << *stringPTR << endl;
-    cout << stringREF << endl;
+    std::cout << str << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
 
-    return ( 0 );
+    return (0);
 }

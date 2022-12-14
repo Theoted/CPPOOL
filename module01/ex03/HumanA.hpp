@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:12:27 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/04 13:40:29 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 10:51:14 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class HumanA
 
 public:
 
-    HumanA( std::string name, Weapon & Weapon );
-    ~HumanA( void );
+    HumanA(const std::string &name, Weapon &Weapon);
+    ~HumanA(void);
 
-    void                attack( void ) const;
+    void                attack(void) const;
     
 private:
 

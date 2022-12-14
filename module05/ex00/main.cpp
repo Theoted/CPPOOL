@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 11:36:13 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/06 10:35:37 by tdeville         ###   ########lyon.fr   */
+/*   Created: 2022/12/06 11:18:23 by tdeville          #+#    #+#             */
+/*   Updated: 2022/12/07 11:26:25 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Bureaucrat.hpp"
 
-Zombie::Zombie(std::string name) : _name(name)
+int main()
 {
-    std::cout << this->getName() << " born" << std::endl;
-}
-
-Zombie::~Zombie(void)
-{
-    std::cout << this->getName() << " delete" << std::endl;
-}
-
-const std::string  &Zombie::getName(void) const
-{
-    return (this->_name);
-}
-
-void    Zombie::announce(void) const
-{
-    std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    Bureaucrat  A("Gilles");
+    Bureaucrat  B;
+    Bureaucrat  C("Chris", 2);
+    try
+    {
+        Bureaucrat I("Gilles", 45);
+        A = I;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << A << std::endl;
+    std::cout << B << std::endl;
+    return (0);
 }

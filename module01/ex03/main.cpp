@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:10:51 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/04 14:01:50 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 10:54:04 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-// int main()
-// {
-//     Weapon arme;
-//     arme.setType("Fusil D'assaut");
-
-//     HumanA ha(arme);
-//     return (0);
-// }
 
 int main()
 {
@@ -31,6 +22,8 @@ int main()
         club.setType("some other type of club");
         bob.attack();
     }
+    std::cout << std::endl;
+    std::cout << std::endl;
     {
         Weapon club = Weapon("crude spiked club");
         HumanB jim("Jim");
@@ -39,5 +32,5 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-    return 0;
+    return (0);
 }

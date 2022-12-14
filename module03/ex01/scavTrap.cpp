@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   scavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:55:50 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/30 12:23:20 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/06 11:08:17 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scavTrap.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
 {

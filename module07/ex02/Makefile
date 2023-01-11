@@ -1,5 +1,5 @@
 NAME	=	whatever
-SRCS	=	main.cpp
+SRCS	=	main.cpp Array.cpp
 
 HEADERS	=	Array.hpp
 

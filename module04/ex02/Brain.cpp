@@ -12,20 +12,27 @@
 
 #include "Brain.hpp"
 
-Brain::Brain(void)
+Brain::Brain()
 {
     std::cout << "Brain default constructor called" << std::endl;
+}
+
+Brain::Brain(const std::string &idea)
+{
+    std::cout << "Brain assign ideas constructor called" << std::endl;
+    for (size_t i = 0; i < 100; i++)
+    {
+        _ideas[i] = idea;
+    }
 }
 
 Brain::Brain(const Brain &Brain)
 {
     std::cout << "Brain Copy constructor called" << std::endl;
-    int i = -1;
-    while (++i < 99)
-        this->ideas[i] = Brain.ideas[i];
+    *this = Brain;
 }
 
-Brain::~Brain(void)
+Brain::~Brain()
 {
     std::cout << "Brain destructor called" << std::endl;
 }
@@ -33,8 +40,22 @@ Brain::~Brain(void)
 Brain  &Brain::operator=(const Brain &Brain)
 {
     std::cout << "Brain Overloaded operator = called" << std::endl;
-    int i = -1;
-    while (++i < 99)
-        this->ideas[i] = Brain.ideas[i];
+    for (size_t i = 0; i < 100; i++)
+    {
+        _ideas[i] = Brain._ideas[i];
+    }
     return (*this);
+}
+
+
+// GETTER
+const std::string   &Brain::getIdea() const { return ( _ideas[0] ); }
+
+// SETTER
+void    Brain::setIdeas(const std::string &idea)
+{
+    for (size_t i = 0; i < 100; i++)
+    {
+        _ideas[i] = idea;
+    }
 }

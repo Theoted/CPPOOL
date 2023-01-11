@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:50:08 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/30 11:39:33 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/14 10:07:39 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,25 @@ class   ClapTrap
 {
 
 public:
-    ClapTrap(void);
-    ClapTrap(std::string name);
+
+    ClapTrap();
+    ClapTrap(const std::string &name);
     ClapTrap(const ClapTrap &ClapTrap);
-    ~ClapTrap(void);
+    ~ClapTrap();
 
     ClapTrap    &operator=(const ClapTrap &ClapTrap);
 
-    void    printValues(void) const;
-
-    void    attack(const std::string& target);
+    // Member functions
+    void    printValues() const;
+    void    attack(const std::string &target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
+
+    // Getters
+    const std::string   &getName() const;
+    unsigned int        getHitPoints() const;
+    unsigned int        getEnergyPoints() const;
+    unsigned int        getAttackDamage() const;
         
 private:
 
@@ -39,8 +46,6 @@ private:
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;
-
-    void    initValues(void);
 
 };
 

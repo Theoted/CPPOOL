@@ -12,33 +12,44 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat()
 {
     std::cout << "Cat default constructor called" << std::endl;
-    this->type = "Cat";
-    this->brain = new Brain();
+    _type = "Cat";
+    _brain = new Brain();
+}
+
+Cat::Cat(const std::string &idea)
+{
+    std::cout << "Cat set ideas constructor called" << std::endl;
+    _type = "Cat";
+    _brain = new Brain(idea);
 }
 
 Cat::Cat(const Cat &Cat)
 {
     std::cout << "Cat Copy constructor called" << std::endl;
-    this->type = Cat.type;
+    *this = Cat;
 }
 
-Cat::~Cat(void)
+Cat::~Cat()
 {
     std::cout << "Cat destructor called" << std::endl;
-    delete this->brain;
+    delete _brain;
 }
 
 Cat  &Cat::operator=(const Cat &Cat)
 {
     std::cout << "Cat Overloaded operator = called" << std::endl;
-    this->type = Cat.type;
+    _type = Cat._type;
+    *_brain = *Cat._brain;
     return (*this);
 }
 
-void    Cat::makeSound(void) const
+void    Cat::makeSound() const
 {
     std::cout << "Miaaaou (Cat)" << std::endl;
 }
+
+// GETTER
+const Brain &Cat::getBrain() const { return ( *_brain ); }

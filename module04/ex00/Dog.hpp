@@ -20,13 +20,13 @@ class Dog : public Animal
 
 public:
 
-    Dog(void);
+    Dog();
     Dog(const Dog &Dog);
-    ~Dog(void);
+    ~Dog();
 
     Dog     &operator=(const Dog &Dog);
 
-    virtual void    makeSound(void) const;
+    void    makeSound() const;
 
 };
 

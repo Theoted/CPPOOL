@@ -6,12 +6,12 @@ CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS)
+$(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:

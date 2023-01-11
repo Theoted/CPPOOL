@@ -1,4 +1,0 @@
-A regler 
-
-multiplication, division
-Incrementations et decrementations

@@ -12,19 +12,19 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog()
 {
     std::cout << "Dog default constructor called" << std::endl;
-    this->type = "Dog";
+    _type = "Dog";
 }
 
 Dog::Dog(const Dog &Dog)
 {
     std::cout << "Dog Copy constructor called" << std::endl;
-    this->type = Dog.type;
+    *this = Dog;
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
 }
@@ -32,11 +32,11 @@ Dog::~Dog(void)
 Dog  &Dog::operator=(const Dog &Dog)
 {
     std::cout << "Dog Overloaded operator = called" << std::endl;
-    this->type = Dog.type;
+    _type = Dog._type;
     return (*this);
 }
 
-void    Dog::makeSound(void) const
+void    Dog::makeSound() const
 {
     std::cout << "Woufh Woufh (dog)" << std::endl;
 }

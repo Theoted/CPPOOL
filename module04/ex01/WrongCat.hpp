@@ -26,8 +26,8 @@ public:
 
     WrongCat  &operator=(const WrongCat &WrongCat);
 
-    virtual void        makeSound(void) const;
-    std::string         getType(void) const;
+    void            makeSound(void) const;
+    std::string     getType(void) const;
 
 };
 

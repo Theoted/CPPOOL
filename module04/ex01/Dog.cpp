@@ -12,33 +12,44 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog()
 {
     std::cout << "Dog default constructor called" << std::endl;
-    this->type = "Dog";
-    this->brain = new Brain();
+    _type = "Dog";
+    _brain = new Brain();
+}
+
+Dog::Dog(const std::string &idea)
+{
+    std::cout << "Dog set ideas constructor called" << std::endl;
+    _type = "Dog";
+    _brain = new Brain(idea);
 }
 
 Dog::Dog(const Dog &Dog)
 {
     std::cout << "Dog Copy constructor called" << std::endl;
-    this->type = Dog.type;
+    *this = Dog;
 }
 
-Dog::~Dog(void)
+Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
-    delete this->brain;
+    delete _brain;
 }
 
 Dog  &Dog::operator=(const Dog &Dog)
 {
     std::cout << "Dog Overloaded operator = called" << std::endl;
-    this->type = Dog.type;
+    _type = Dog._type;
+    *_brain = *Dog._brain;
     return (*this);
 }
 
-void    Dog::makeSound(void) const
+void    Dog::makeSound() const
 {
     std::cout << "Woufh Woufh (dog)" << std::endl;
 }
+
+// GETTER
+const Brain &Dog::getBrain() const { return ( *_brain ); }

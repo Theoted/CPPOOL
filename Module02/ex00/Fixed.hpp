@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:37:26 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/29 10:21:09 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/12 13:15:06 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 
 private:
 
-    int                 _n;
+    int                 _rawBits;
     static const int    _bits = 8;
 
 };

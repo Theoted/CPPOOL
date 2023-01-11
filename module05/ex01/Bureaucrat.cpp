@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:13:30 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/07 11:20:50 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2023/01/05 13:10:51 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(void) :	_name("NoName"),
 Bureaucrat::Bureaucrat(const std::string &name) : _name(name)
 {
 	std::cout << "Bureaucrat " << name << " name constructor called" << std::endl;
-	this->_grade = 150;
+	_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) : _name(name)
@@ -31,7 +31,7 @@ Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade) : _name(name
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	std::cout << "Bureaucrat " << name << " name and grade constructor called" << std::endl;
-	this->_grade = grade;
+	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat) :	_name(Bureaucrat._name),
@@ -42,47 +42,60 @@ Bureaucrat::Bureaucrat(const Bureaucrat &Bureaucrat) :	_name(Bureaucrat._name),
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucrat " << this->_name << " destructor called" << std::endl;
+	std::cout << "Bureaucrat " << _name << " destructor called" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &Bureaucrat) 
 {
-	std::cout << "Bureaucrat equal operator called" << std::endl;
-	this->_grade = Bureaucrat.getGrade();
-	
+	std::cerr << "Bureaucrat equal operator doesn't work because of const attributes" << std::endl;
+	(void)Bureaucrat;
 	return (*this);
 }
 
 // _name accessor
 const std::string	&Bureaucrat::getName() const
 {
-	return (this->_name);
+	return (_name);
 }
 
 // _grade accessors
 void				Bureaucrat::setGrade(unsigned int grade)
 {
-	this->_grade = grade;
+	_grade = grade;
 }
 
 unsigned int		Bureaucrat::getGrade() const
 {
-	return (this->_grade);
+	return (_grade);
 }
 
 // Member function
 void	Bureaucrat::upgrade()
 {
-	this->_grade--;
-	if (this->_grade < 1)
+	_grade--;
+	if (_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::demote()
 {
-	this->_grade++;
-	if (this->_grade > 150)
+	_grade++;
+	if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(Form &Form) const
+{
+	try
+	{
+		Form.beSigned(*this);
+		std::cout << getName() << " signed " << Form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << getName() << " couldn't sign " << Form.getName()
+			<< " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &Bureaucrat)

@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:50:02 by theodeville       #+#    #+#             */
-/*   Updated: 2022/12/06 11:07:44 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 09:37:22 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 
 int main()
 {
-    ClapTrap    A;
-    ClapTrap    B("Fab");
-    ClapTrap    C;
+    ClapTrap    Lulu("Lulu");
+    ClapTrap    Theo("Theo");
+    ClapTrap    Igor;
 
-    C = A;
-
-    A.printValues();
-    B.printValues();
-    C.printValues();
-
-    A.attack("Chris");
-    A.takeDamage(5);
-    C.beRepaired(10);
+    Igor.takeDamage(5);
+    Igor.printValues();
+    Igor = Theo;
+    Igor.printValues();
     
-    A.printValues();
-    B.printValues();
-    C.printValues();
+    std::cout << "\n\n\n";
+    
+    Igor.takeDamage(9);
+    Igor.printValues();
+    std::cout << "\n";
+    Theo.printValues();
+    
+    std::cout << "\n\n\n";
+
+    Lulu.takeDamage(500);
+    Lulu.printValues();
+    Lulu.attack("A guy");
+    Lulu.beRepaired(1000);
+    
     return (0);
 }

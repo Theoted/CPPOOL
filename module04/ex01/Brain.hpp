@@ -21,15 +21,22 @@ class Brain
 
 public:
 
-    Brain(void);
+    Brain();
+    Brain(const std::string &idea);
     Brain(const Brain &Brain);
-    ~Brain(void);
+    ~Brain();
 
     Brain  &operator=(const Brain &Brain);
 
+    // Getter
+    const std::string   &getIdea() const;
+
+    // Setter
+    void    setIdeas(const std::string &idea);
+
 protected:
 
-    std::string ideas[100];
+    std::string _ideas[100];
 
 };
 

@@ -20,13 +20,13 @@ class Cat : public Animal
 
 public:
 
-    Cat(void);
+    Cat();
     Cat(const Cat &Cat);
-    ~Cat(void);
+    ~Cat();
 
     Cat     &operator=(const Cat &Cat);
 
-    virtual void    makeSound(void) const;
+    void    makeSound() const;
 
 };
 

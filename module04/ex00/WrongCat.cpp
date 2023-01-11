@@ -12,19 +12,19 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat()
 {
     std::cout << "WrongCat default constructor called" << std::endl;
-    this->type = "WrongCat";
+    _type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat &WrongCat)
 {
     std::cout << "WrongCat Copy constructor called" << std::endl;
-    this->type = WrongCat.type;
+    *this = WrongCat;
 }
 
-WrongCat::~WrongCat(void)
+WrongCat::~WrongCat()
 {
     std::cout << "WrongCat destructor called" << std::endl;
 }
@@ -32,16 +32,16 @@ WrongCat::~WrongCat(void)
 WrongCat  &WrongCat::operator=(const WrongCat &WrongCat)
 {
     std::cout << "WrongCat Overloaded operator = called" << std::endl;
-    this->type = WrongCat.type;
+    _type = WrongCat._type;
     return (*this);
 }
 
-void    WrongCat::makeSound(void) const
+void    WrongCat::makeSound() const
 {
     std::cout << "MMuueeeWWeew (Wrong Cat)" << std::endl;
 }
 
-std::string WrongCat::getType(void) const
+std::string WrongCat::getType() const
 {
-    return (this->type);
+    return (_type);
 }

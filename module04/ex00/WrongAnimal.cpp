@@ -12,7 +12,7 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void)
+WrongAnimal::WrongAnimal()
 {
     std::cout << "WrongAnimal default constructor called" << std::endl;
 }
@@ -20,10 +20,10 @@ WrongAnimal::WrongAnimal(void)
 WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal)
 {
     std::cout << "WrongAnimal Copy constructor called" << std::endl;
-    this->type = WrongAnimal.type;
+    *this = WrongAnimal;
 }
 
-WrongAnimal::~WrongAnimal(void)
+WrongAnimal::~WrongAnimal()
 {
     std::cout << "WrongAnimal destructor called" << std::endl;
 }
@@ -31,16 +31,16 @@ WrongAnimal::~WrongAnimal(void)
 WrongAnimal  &WrongAnimal::operator=(const WrongAnimal &WrongAnimal)
 {
     std::cout << "WrongAnimal Overloaded operator = called" << std::endl;
-    this->type = WrongAnimal.type;
+    _type = WrongAnimal._type;
     return (*this);
 }
 
-void    WrongAnimal::makeSound(void) const
+void    WrongAnimal::makeSound() const
 {
     std::cout << "WrongAnimal make sound" << std::endl;
 }
 
-std::string WrongAnimal::getType(void) const
+std::string WrongAnimal::getType() const
 {
-    return (this->type);
+    return (_type);
 }

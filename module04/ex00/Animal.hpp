@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:53:36 by theodeville       #+#    #+#             */
-/*   Updated: 2022/12/02 14:35:12 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/14 11:25:25 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ class Animal
 
 public:
 
-    Animal(void);
+    Animal();
     Animal(const Animal &Animal);
-    virtual ~Animal(void);
+    virtual ~Animal();
 
     Animal  &operator=(const Animal &Animal);
 
-    std::string         getType(void) const;
-    virtual void        makeSound(void) const;
+    std::string         getType() const;
+    virtual void        makeSound() const;
 
 protected:
 
-    std::string type;
+    std::string _type;
 
 };
 

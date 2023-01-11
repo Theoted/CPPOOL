@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 11:18:23 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/07 11:26:25 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2023/01/05 13:08:09 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,63 @@
 
 int main()
 {
-    Bureaucrat  A("Gilles");
-    Bureaucrat  B;
-    Bureaucrat  C("Chris", 2);
     try
     {
-        Bureaucrat I("Gilles", 45);
-        A = I;
+        Bureaucrat Theo("Theo", 150);
+        Bureaucrat Ted("Ted", 159);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << A << std::endl;
-    std::cout << B << std::endl;
+    
+    try
+    {
+        Bureaucrat Theo("Theo", 150);
+        Theo.demote();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    try
+    {
+        Bureaucrat Theo("Theo", 0);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    try
+    {
+        Bureaucrat Theo("Theo", 1);
+        Theo.upgrade();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    try
+    {
+        Bureaucrat Theo("Theo", 10);
+        std::cout << Theo << std::endl;
+        std::cout << Theo.getName() << std::endl;
+        std::cout << Theo.getGrade() << std::endl;
+        
+        std::cout << std::endl;
+
+        Bureaucrat Ted(Theo);
+        Theo.upgrade();
+        Theo.upgrade();
+        std::cout << Theo.getGrade() << std::endl;
+        std::cout << Ted << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return (0);
 }

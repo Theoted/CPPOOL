@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:37:26 by tdeville          #+#    #+#             */
-/*   Updated: 2022/12/06 16:28:44 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 13:16:10 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ public:
     int     toInt(void) const;
 
     int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+    void    setRawBits(int const rawBits);
 
 private:
 
-    int                 _n;
+    int                 _rawBits;
     static const int    _bits = 8;
 
 };

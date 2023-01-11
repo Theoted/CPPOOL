@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:50:08 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/30 11:54:59 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/14 10:22:56 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,31 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
-# include <string>
+# include <string> 
 
 class   ClapTrap
 {
 
 public:
-    ClapTrap(void);
-    ClapTrap(std::string name);
+
+    ClapTrap();
+    ClapTrap(const std::string &name);
     ClapTrap(const ClapTrap &ClapTrap);
-    ~ClapTrap(void);
+    virtual ~ClapTrap();
 
     ClapTrap    &operator=(const ClapTrap &ClapTrap);
 
-    void    printValues(void) const;
+    // Member functions
+    virtual void    printValues() const;
+    void            takeDamage(unsigned int amount);
+    void            beRepaired(unsigned int amount);
+    virtual void    attack(const std::string &target);
 
-    void    attack(const std::string& target);
-    void    takeDamage(unsigned int amount);
-    void    beRepaired(unsigned int amount);
+    // Getters
+    const std::string   &getName() const;
+    unsigned int        getHitPoints() const;
+    unsigned int        getEnergyPoints() const;
+    unsigned int        getAttackDamage() const;
         
 protected:
 
@@ -39,10 +46,6 @@ protected:
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;
-
-private:
-
-    void    initValues(void);
 
 };
 

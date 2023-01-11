@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 16:59:34 by theodeville       #+#    #+#             */
-/*   Updated: 2022/11/07 13:03:00 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/09 13:22:50 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int main(int ac, char **av)
 	if (check_infile(infile))
 		return (1);
 	
-	std::ofstream   outfile(strcat(av[1], ".replace"));
+	std::ofstream   outfile(std::strcat(av[1], ".replace"));
 	if (check_outfile(outfile))
 		return (1);
 

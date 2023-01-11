@@ -18,6 +18,18 @@ Form::Form(void) :  _name("NoNameForm"), _signed(false),
     std::cout << "Form default constructor called" << std::endl;
 }
 
+Form::Form(const std::string &name, unsigned int gradeToSign,
+            unsigned int gradeToExecute) : 
+                _name(name), _signed(false), _gradeToSign(gradeToSign),
+                _gradeToExecute(gradeToExecute)
+{
+    if (gradeToExecute > 150 || gradeToSign > 150)
+        throw Form::GradeTooLowException();
+    if (gradeToExecute < 1 || gradeToSign < 1)
+        throw Form::GradeTooHighException();
+    std::cout << "Form all initialize constructor called" << std::endl;
+}
+
 Form::Form(const Form &Form) :  _name(Form.getName()), _signed(Form.getSigned()),
                                 _gradeToSign(Form.getGradeToSign()),
                                 _gradeToExecute(Form.getGradeToExecute())
@@ -32,21 +44,22 @@ Form::~Form(void)
 
 Form  &Form::operator=(const Form &Form)
 {
-    std::cout << "Form Overloaded operator = called" << std::endl;
+    std::cerr << "Form equal operator doesn't work because of const attributes" << std::endl;
+    (void)Form;
     return (*this);
 }
 
 std::ostream &operator<<(std::ostream &o, Form &Form)
 {
-    o << Form.getName() << " " << Form.getSigned() << " "
-        << Form.getGradeToSign() << " " << Form.getGradeToExecute() << " ";
+    o << "Name: " << Form.getName() << ", Signed: " << Form.getSigned() << ", Grade to sign: "
+        << Form.getGradeToSign() << ", Grade to execute: " << Form.getGradeToExecute();
     return (o);
 }
 
 // Accessors
 const std::string   &Form::getName() const
 {
-    return (this->_name);
+    return (_name);
 }
 
 void    Form::setSigned(bool b)
@@ -56,21 +69,23 @@ void    Form::setSigned(bool b)
 
 bool    Form::getSigned() const
 {
-    return (this->_signed);
+    return (_signed);
 }
 
-const unsigned int  Form::getGradeToSign() const
+unsigned int  Form::getGradeToSign() const
 {
-    return (this->_gradeToSign);
+    return (_gradeToSign);
 }
 
-const unsigned int  Form::getGradeToExecute() const
+unsigned int  Form::getGradeToExecute() const
 {
-    return (this->_gradeToExecute);
+    return (_gradeToExecute);
 }
 
 // Member Functions
 void    Form::beSigned(const Bureaucrat &Bureaucrat)
 {
-    if (Bureaucrat.getGrade() )
+    if (Bureaucrat.getGrade() > getGradeToSign())
+        throw Form::GradeTooLowException();
+    setSigned(true);
 }

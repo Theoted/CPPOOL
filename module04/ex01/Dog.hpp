@@ -21,17 +21,21 @@ class Dog : public Animal
 
 public:
 
-    Dog(void);
+    Dog();
+    Dog(const std::string &idea);
     Dog(const Dog &Dog);
     ~Dog(void);
 
     Dog     &operator=(const Dog &Dog);
 
-    virtual void    makeSound(void) const;
+    void    makeSound() const;
+
+    // Getter
+    const Brain         &getBrain() const;
 
 private:
 
-    Brain   *brain;
+    Brain   *_brain;
 
 };
 

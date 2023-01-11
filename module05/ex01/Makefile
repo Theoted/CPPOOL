@@ -1,17 +1,17 @@
 NAME	=	bureaucrat
-SRCS	=	main.cpp Bureaucrat.cpp
-HEADERS	=	Bureaucrat.hpp
+SRCS	=	main.cpp Bureaucrat.cpp Form.cpp
+HEADERS	=	Bureaucrat.hpp Form.hpp 
 CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS)
+$(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:

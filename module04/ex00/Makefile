@@ -1,17 +1,17 @@
 NAME	=	animal
 SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 HEADERS	=	Animal.hpp Cat.hpp Dog.hpp Animal.hpp Cat.hpp
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS)
+$(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:

@@ -2,17 +2,16 @@ NAME	=	Fixed
 SRCS	=	main.cpp Fixed.cpp 
 HEADERS	=	Fixed.hpp
 CC		=	clang++
-CFLAGS	=	-std=c++98
+CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
-# -Wall -Wextra -Werror
 OBJS	=	$(SRCS:.cpp=.o)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS)
+$(NAME):	$(OBJS) 
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:

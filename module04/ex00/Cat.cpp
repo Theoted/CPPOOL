@@ -12,19 +12,19 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat()
 {
     std::cout << "Cat default constructor called" << std::endl;
-    this->type = "Cat";
+    _type = "Cat";
 }
 
 Cat::Cat(const Cat &Cat)
 {
     std::cout << "Cat Copy constructor called" << std::endl;
-    this->type = Cat.type;
+    *this = Cat;
 }
 
-Cat::~Cat(void)
+Cat::~Cat()
 {
     std::cout << "Cat destructor called" << std::endl;
 }
@@ -32,11 +32,11 @@ Cat::~Cat(void)
 Cat  &Cat::operator=(const Cat &Cat)
 {
     std::cout << "Cat Overloaded operator = called" << std::endl;
-    this->type = Cat.type;
+    _type = Cat._type;
     return (*this);
 }
 
-void    Cat::makeSound(void) const
+void    Cat::makeSound() const
 {
     std::cout << "Miaaaou (Cat)" << std::endl;
 }

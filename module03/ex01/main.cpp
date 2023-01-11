@@ -6,7 +6,7 @@
 /*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:50:02 by theodeville       #+#    #+#             */
-/*   Updated: 2022/12/06 11:08:34 by tdeville         ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 10:18:54 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,37 @@
 
 int main()
 {
-    ClapTrap    A("Fab");
-    ScavTrap    B("Mon Fab");
-    ScavTrap    C;
-    ClapTrap    D;
+    {
+        ClapTrap *Ted = new ScavTrap("Ted");
+        ScavTrap Lulu("Lulu");
+        ClapTrap Max("Max");
+        ClapTrap Guy;
 
-    D = C;
+        Ted->printValues();
+        Lulu.printValues();
+        Max.printValues();
+        Lulu.guardGate();
 
-    A.printValues();
-    B.scavPrintValues();
-    C.scavPrintValues();
-    D.printValues();
+        std::cout << "\n\n\n";
+
+        Guy.printValues();
+        Guy = Lulu;
+        Guy.printValues();
+
+        std::cout << "\n\n\n";
+        Guy.attack("A guy");
+        Guy.takeDamage(1561943);
+        Guy.beRepaired(13424);
+        Guy.printValues();
+        Lulu.printValues();
+
+        delete Ted;
+    }
+    std::cout << "\n\n\n";
+    {
+        ClapTrap    Ted("Ted");
+        ScavTrap    Teddy("Teddy");
+        ClapTrap    Lolo("Lolo");
+    }
     return (0);
 }

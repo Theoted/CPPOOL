@@ -12,7 +12,7 @@
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal(void)
+AAnimal::AAnimal()
 {
     std::cout << "AAnimal default constructor called" << std::endl;
 }
@@ -20,10 +20,10 @@ AAnimal::AAnimal(void)
 AAnimal::AAnimal(const AAnimal &AAnimal)
 {
     std::cout << "AAnimal Copy constructor called" << std::endl;
-    this->type = AAnimal.type;
+    *this = AAnimal;
 }
 
-AAnimal::~AAnimal(void)
+AAnimal::~AAnimal()
 {
     std::cout << "AAnimal destructor called" << std::endl;
 }
@@ -31,16 +31,16 @@ AAnimal::~AAnimal(void)
 AAnimal  &AAnimal::operator=(const AAnimal &AAnimal)
 {
     std::cout << "AAnimal Overloaded operator = called" << std::endl;
-    this->type = AAnimal.type;
+    _type = AAnimal._type;
     return (*this);
 }
 
-std::string AAnimal::getType(void) const
+const std::string &AAnimal::getType() const
 {
-    return (this->type);
+    return (_type);
 }
 
-void    AAnimal::makeSound(void) const
+void    AAnimal::makeSound() const
 {
     std::cout << "AAnimal make a sound" << std::endl;
 }

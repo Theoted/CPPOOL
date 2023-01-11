@@ -21,18 +21,18 @@ class WrongAnimal
 
 public:
 
-    WrongAnimal(void);
+    WrongAnimal();
     WrongAnimal(const WrongAnimal &WrongAnimal);
-    virtual ~WrongAnimal(void);
+    virtual ~WrongAnimal();
 
     WrongAnimal  &operator=(const WrongAnimal &WrongAnimal);
 
-    virtual void        makeSound(void) const;
-    std::string         getType(void) const;
+    void            makeSound() const;
+    std::string     getType() const;
 
 protected:
 
-    std::string type;
+    std::string _type;
 
 };
 

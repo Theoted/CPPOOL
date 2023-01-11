@@ -15,9 +15,13 @@
 
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 
+public:
+    
     class GradeTooHighException : public std::exception
     {
         public:
@@ -30,26 +34,28 @@ class Form
             virtual const char *what() const throw(){return ("Grade Too Low\n");}
     };
 
-public:
-
     Form(void);
+    Form(const std::string &name, unsigned int gradeToSign, unsigned int gradeToExecute);
     Form(const Form &Form);
     ~Form(void);
 
-    Form  &operator=(const Form &Form);
 
-    // Accessors
+    // Getters
     const std::string   &getName() const;
-    void                setSigned(bool b);
     bool                getSigned() const;
-    const unsigned int  getGradeToSign() const;
-    const unsigned int  getGradeToExecute() const;
+    unsigned int        getGradeToSign() const;
+    unsigned int        getGradeToExecute() const;
+    
+    // Setter
+    void                setSigned(bool b);
 
     // Member Functions
-    void        beSigned(const Bureaucrat &Bureaucrat);    
+    void        beSigned(const Bureaucrat &Bureaucrat);
 
 private:
 
+    Form  &operator=(const Form &Form);
+    
     const std::string   _name;
     bool                _signed;
     const unsigned int  _gradeToSign;

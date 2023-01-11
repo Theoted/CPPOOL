@@ -21,17 +21,21 @@ class Cat : public AAnimal
 
 public:
 
-    Cat(void);
+    Cat();
+    Cat(const std::string &idea);
     Cat(const Cat &Cat);
-    ~Cat(void);
+    ~Cat();
 
     Cat     &operator=(const Cat &Cat);
 
-    virtual void    makeSound(void) const;
+    void    makeSound() const;
+
+    // Getter
+    const Brain &getBrain() const;
 
 private:
 
-    Brain   *brain;
+    Brain   *_brain;
 
 };
 

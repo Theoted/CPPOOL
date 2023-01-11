@@ -21,18 +21,18 @@ class AAnimal
 
 public:
 
-    AAnimal(void);
+    AAnimal();
     AAnimal(const AAnimal &AAnimal);
     virtual ~AAnimal(void);
 
     AAnimal  &operator=(const AAnimal &AAnimal);
 
-    std::string         getType(void) const;
-    virtual void        makeSound(void) const = 0;
+    const std::string   &getType() const;
+    virtual void        makeSound() const = 0;
 
 protected:
 
-    std::string type;
+    std::string _type;
 
 };
 

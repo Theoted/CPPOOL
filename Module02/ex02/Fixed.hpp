@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theodeville <theodeville@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tdeville <tdeville@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:37:26 by tdeville          #+#    #+#             */
-/*   Updated: 2022/11/29 13:27:10 by theodeville      ###   ########.fr       */
+/*   Updated: 2022/12/12 13:27:32 by tdeville         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ public:
     int     toInt(void) const;
 
     int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+    void    setRawBits(int const rawBits);
 
 private:
 
-    int                 _n;
+    int                 _rawBits;
     static const int    _bits = 8;
 
 };
